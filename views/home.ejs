@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lego Collection</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body class="bg-gray-100">
+    <body class="bg-pastel-pink">
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div>
+
+                        <a href="/" class="flex items-center py-4 px-2">
+                            <span class="font-semibold text-gray-500 text-lg">Lego Collection</span>
+                        </a>
+                    </div>
+
+                    <%- include('partials/navbar', { page: '/'}) %>                     
+
+    <!-- Hero Section -->
+    <div class="hero min-h-screen" style="background-image: url('path_to_your_hero_image');">
+        <div class="hero-overlay bg-opacity-60"></div>
+        <div class="hero-content text-center text-neutral-content">
+            <div class="max-w-md">
+                <h1 class="mb-5 text-5xl font-bold">Welcome !</h1>
+                <p class="mb-5">Welcome to the fascinating world of the Lego Collection! Embark on a journey of creativity 
+                    and imagination as you explore Lego sets spanning across captivating themes.Start your adventure today!</p>
+                <a href="/lego/sets" class="btn btn-primary">Explore Now</a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Grid of Cards -->
+<div class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Card 1 -->
+        <div class="card w-full bg-base-100 shadow-xl">
+            <figure><img src="https://cdn.rebrickable.com/media/sets/010423-1.jpg" alt="Horse"></figure>
+            <div class="card-body">
+                <h2 class="card-title">The Majestic Horse</h2>
+                <p>A modern 2023 set with 100 parts.</p>
+                <a href="/lego/sets/010423-1" class="btn btn-primary">More Details</a>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card w-full bg-base-100 shadow-xl">
+            <figure><img src="https://cdn.rebrickable.com/media/sets/0015-1.jpg" alt="Space Mini Figures"></figure>
+            <div class="card-body">
+                <h2 class="card-title">Space Mini Figures</h2>
+                <p>Iconic space mini-figures from 1979 with 18 parts.</p>
+                <a href="/lego/sets/0015-1" class="btn btn-primary">More Details</a>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card w-full bg-base-100 shadow-xl">
+            <figure><img src="https://cdn.rebrickable.com/media/sets/005-1.jpg" alt="Basic Building Set in Cardboard"></figure>
+            <div class="card-body">
+                <h2 class="card-title">Basic Building Set in Cardboard</h2>
+                <p>Special set from 1965 with 35 parts.</p>
+                <a href="/lego/sets/005-1" class="btn btn-primary">More Details</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // JavaScript 
+    document.getElementById("theme-select").addEventListener("change", function() {
+        var selectedTheme = this.value;
+        if (selectedTheme !== "") {
+            window.location.href = "404.html"; // Redirect to 404.html
+        }
+    });
+</script>
+
+    <script src="./modules/legoSets.js"></script>
+    <script src="./server.js"></script>
+</body>
+</html>

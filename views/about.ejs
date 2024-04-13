@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <style>
+        .bg-pastel-pink {
+            background-color: #ffc0cb; /* This is a pastel pink color */
+        }
+    </style>
+</head>
+<body class="bg-pastel-pink">
+
+    <%- include('partials/navbar', {page: '/about'}) %>
+
+
+    
+    <!-- About Section -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="hero bg-base-200 rounded-lg shadow-xl">
+            <div class="hero-content flex-col lg:flex-row">
+                <img src="https://i.pinimg.com/564x/87/f2/6a/87f26a40678e7a63f1fd4af5f76165d6.jpg" class="max-w-sm rounded-lg shadow-2xl" alt="About Me">
+                <div>
+                    <h1 class="text-5xl font-bold">About Me</h1>
+                    <p class="py-6">
+                        My name is Fatima Musharaf Khan I am a third culture kid, my ethnicity is Pakistani and 
+                        I have lived in Dubai for 20 years. I am a beginner programmer and learning things as it goes.
+                        I love G wagon as you can tell and I am obsessed with learning about the human body and nutrition.
+                        I am also interested in having a career in Data science and cyber security.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

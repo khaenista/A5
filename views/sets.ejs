@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lego Collection</title>
+  <link rel="stylesheet" href="/css/main.css" />
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      height: 100vh; 
+      margin: 0; 
+    }
+
+    .container {
+      flex: 1; 
+      overflow-y: auto;
+    }
+  </style>
+</head>
+
+<body tabindex="-1" class="background-fox">
+  <%- include('partials/navbar', { page: '/'}) %>
+
+  <br />
+  <div class="container mx-auto">
+    <div class="hero bg-pink-200 rounded-lg p-6" style="background-color: #FFD1DC;">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold" style="background-color: #FFD1DC;">Collection</h1>
+          <br />
+          <p>Browse our entire collection</p>
+          <br />
+          <div class="flex justify-center">
+            <a href="/lego/sets" class="btn btn-primary mr-4" style="background-color: #6262ff;">All</a>
+            <a href="/lego/sets?theme=technic" class="btn btn-primary mr-4" style="background-color: #6262ff;">Technic</a>
+            <a href="/lego/sets?theme=classic%20town" class="btn btn-primary mr-4" style="background-color: #6262ff;">Classic Town</a>
+            <a href="/lego/sets?theme=supplemental" class="btn btn-primary" style="background-color: #6262ff;">Supplemental</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br/>
+    
+    <table class="table-auto w-full" style="font-weight: bold;">
+      <tbody>
+        <% sets.forEach(set => { %>
+        <tr>
+          <td>
+            <div class="avatar relative">
+              <div class="avatar relative" style="display: flex; justify-content: center; align-items: center; height: 100px;">
+                <img class="object-cover" src="<%- set.img_url %>" alt="Lego Box Image" style="max-width: 100%; max-height: 100%;">
+              </div>
+            </div>
+          </td>
+          <td>
+            <%= set.name %><a href="/lego/sets?theme=<%= set.themeId %>"><%= set.themeName %></a>
+          </td>
+          <td><span class="font-bold">Year:</span> <%= set.year %>  <span class="font-bold">, Parts:</span> <%= set.num_parts %></td>
+          <td>
+            <a href="/lego/sets/<%= set.set_num %>" class="btn btn-xs" style="background-color: navy; color: white;">Item View</a>
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

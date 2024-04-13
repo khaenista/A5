@@ -1,0 +1,71 @@
+   <!-- Primary Navbar items -->
+   <div class="hidden md:flex items-center space-x-1">
+    <a href="/" class="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold ">Home</a>
+    <li><a class="<%= (page == "/about") ? 'active' : '' %>" href="/about">About </a></li>
+    <li><a class="<%= (page == "/lego/sets") ? 'active' : '' %>" href="/lego/sets"> View Collection</a></li>
+    <li><a class="<%= (page == "/lego/addSet") ? 'active' : '' %>" href="/lego/addSet">Add Set</a></li> 
+
+    <div class="dropdown relative">
+
+        <ul class="menu menu-horizontal px-1">
+
+
+        <button class="py-2 px-2 text-gray-500 font-semibold rounded hover:bg-gray-100">
+            Themes
+
+            <select id="theme-select" class="block w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:border-gray-400 text-black">
+                <option disabled selected>Select a Theme</option>
+                <option value="Cars">🚗 Cars - Race into thrilling adventures</option>
+                <option value="Buildings">🏙️ Buildings - Create towering architectural wonders</option>
+                <option value="Superheros">🦸 Superheroes - Join the fight for justice</option>
+            </select>
+            
+            </select> 
+            <i class="fas fa-chevron-down"></i>
+        </button>
+
+
+        <div class="dropdown-menu absolute hidden h-auto flex pt-5 flex-col bg-white shadow-lg">
+            <a class="<%= (page == "/lego/sets") ? 'active' : '' %>" href="/lego/sets?theme=Space">Space</a>
+            <a class="<%= (page == "/lego/sets") ? 'active' : '' %>" href="/lego/sets?theme=Castle">Castle</a>
+            <a class="<%= (page == "/lego/sets") ? 'active' : '' %>" href="/lego/sets?theme=City">City</a>
+
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Mobile Menu Icon -->
+<div class="md:hidden flex items-center">
+<button class="outline-none mobile-menu-button">
+    <svg class=" w-6 h-6 text-gray-500 hover:text-green-500 "
+        x-show="!showMenu"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        stroke="currentColor">
+        <path d="M4 6h16M4 12h16m-7 6h7"></path>
+    </svg>
+</button>
+</div>
+</div>
+</div>
+
+<!-- Mobile Menu -->
+<div class="hidden mobile-menu">
+<ul class="">
+<li class="active">
+<a href="/" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">
+    Home
+</a>
+</li>
+<li>
+<a href="/about" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">
+    About
+</a>
+</li>
+</ul>
+</div>
+</nav>
